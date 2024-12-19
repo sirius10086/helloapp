@@ -1,14 +1,29 @@
 import streamlit as st
 
-# Title and introductory text
-st.title("Business Dashboard")
-st.header("Product Sales and Customer Engagement Overview")
-st.subheader("Key Metrics")
-st.write("This dashboard provides insights into product sales performance and customer interactions.")
+# Dashboard Title
+st.title("Company Performance Dashboard")
 
-# Different text elements
-st.markdown("**Sales Summary**")
-st.text("Below is a summary of the latest sales data.")
-st.code("sales_data = pd.read_csv('sales_data.csv')", language="python")
-st.caption("Data source: Company database")
+# Main Header
+st.header("Executive Summary")
+
+# Subheader
+st.subheader("Company Overview")
+
+# Text Descriptions
+st.write("Our company focuses on delivering high-quality products to our customers globally, leveraging technology to drive innovation.")
+st.text("All figures are updated quarterly.")
+
+# Formatted Text with Markdown
+st.markdown("**Mission Statement:** Deliver excellence through innovation and customer-centric solutions.")
+
+# Code Example
+st.code("""
+def calculate_growth(revenue_q1, revenue_q2):
+    return (revenue_q2 - revenue_q1) / revenue_q1 * 100
+""", language="python")
+
+# Caption for Code Example
+st.caption("This function calculates quarterly growth based on revenue.")
+
+# Divider
 st.divider()
