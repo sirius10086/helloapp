@@ -1,29 +1,16 @@
+import pandas as pd
 import streamlit as st
 
-# Dashboard Title
-st.title("Company Performance Dashboard")
+# Sample data
+data = {'Product': ['A', 'B', 'C'],
+        'Sales': [1200, 850, 950],
+        'Customers': [300, 400, 350]}
+df = pd.DataFrame(data)
 
-# Main Header
-st.header("Executive Summary")
+# Show data with Streamlit elements
+st.dataframe(df)                # Interactive table
+st.data_editor(df)              # Editable table
+st.table(df)                    # Static table
 
-# Subheader
-st.subheader("Company Overview")
-
-# Text Descriptions
-st.write("Our company focuses on delivering high-quality products to our customers globally, leveraging technology to drive innovation.")
-st.text("All figures are updated quarterly.")
-
-# Formatted Text with Markdown
-st.markdown("**Mission Statement:** Deliver excellence through innovation and customer-centric solutions.")
-
-# Code Example
-st.code("""
-def calculate_growth(revenue_q1, revenue_q2):
-    return (revenue_q2 - revenue_q1) / revenue_q1 * 100
-""", language="python")
-
-# Caption for Code Example
-st.caption("This function calculates quarterly growth based on revenue.")
-
-# Divider
-st.divider()
+# Customize columns directly in the dataframe display
+st.dataframe(df.style.format({'Sales': '${:,.0f}', 'Customers': '{:,.0f}'}))
