@@ -104,8 +104,8 @@ df = pd.DataFrame(
 )
 edited_df = st.data_editor(df)
 
-favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
-st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
+favorite_command = df[('rating'== df['rating'].max())]
+st.markdown(f"Your favorite command is **{favorite_command[command]}** 🎈")
 
 st.divider()
 #_____________________________________________________________
